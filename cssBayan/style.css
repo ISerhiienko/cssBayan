@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+  font-family: "Fredoka One", cursive;
+  margin: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.wrapper {
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.accordion {
+  min-width: 40vw;
+}
+
+.accordion__item {
+  padding-bottom: 1rem;
+}
+
+.icon {
+  opacity: 0;
+  margin-left: 1rem;
+  transition: 0.3s;
+}
+
+.accordion__item {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.accordion:hover .accordion__item-title {
+  color: #000;
+}
+
+.accordion:hover svg {
+  opacity: 1;
+}
+
+.accordion__item:hover svg {
+  transform: rotate(45deg);
+}
+
+.accordion__item-header input {
+  display: none;
+}
+
+.accordion__item-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #427be8;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #999;
+}
+
+.accordion__item-content {
+  padding-top: 1rem;
+  height: 0;
+}
+
+.accordion__item-content img {
+  width: 100%;
+  margin: 0 auto;
+  transition: 0.3s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+input[type="radio"]:checked ~ .accordion__item-title {
+  color: #000;
+}
+
+input[type="radio"]:checked ~ .accordion__item-content {
+  height: 100%;
+}
+
+input[type="radio"]:checked ~ .accordion__item-title .icon {
+  transform: rotate(45deg);
+}
+
+.accordion__item:hover .accordion__item-content {
+  height: 100%;
+}
+
+input[type="radio"]:checked ~ .accordion__item-content img {
+  opacity: 1;
+  transform: none;
+}
+
+.accordion__item:hover .accordion__item-content img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media (min-width: 320px) {
+  .accordion__item-title {
+    font-size: 1rem;
+  }
+  .wrapper {
+    padding: 1rem;
+  }
+  .header__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .accordion__item-title {
+    font-size: 1.5rem;
+  }
+  .wrapper {
+    width: 60vw;
+  }
+  img {
+    max-width: 50%;
+  }
+  .header__title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .accordion__item-title {
+    font-size: 2rem;
+  }
+  .wrapper {
+    width: 70vw;
+  }
+  .header__title {
+    font-size: 2.5rem;
+  }
+}
