@@ -91,15 +91,26 @@ h1 {
   opacity: 0;
 }
 
-input[type="radio"]:checked ~ .accordion__item-title {
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ .accordion__item-header .accordion__item-title {
   color: #000;
 }
 
-input[type="radio"]:checked ~ .accordion__item-content {
+input[type="radio"]:active ~ .accordion__item-header .accordion__item-title {
+  color: #427be8;
+}
+
+input[type="radio"]:checked ~ .accordion__item-header .accordion__item-content {
   height: 100%;
 }
 
-input[type="radio"]:checked ~ .accordion__item-title .icon {
+input[type="radio"]:checked
+  ~ .accordion__item-header
+  .accordion__item-title
+  .icon {
   transform: rotate(45deg);
 }
 
@@ -107,7 +118,10 @@ input[type="radio"]:checked ~ .accordion__item-title .icon {
   height: 100%;
 }
 
-input[type="radio"]:checked ~ .accordion__item-content img {
+input[type="radio"]:checked
+  ~ .accordion__item-header
+  .accordion__item-content
+  img {
   opacity: 1;
   transform: none;
 }
